@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import LinkNav from '../components/LinkNav'
+import { Menu,Button } from '@mantine/core'
 
 // Icons 
 import {HiOutlineMenuAlt1} from 'react-icons/hi'
-
 
 // Styles
 import "../assets/styles/header.css"
@@ -31,8 +31,38 @@ export default function Header() {
                         <LinkNav name="Projects" link="/project" />
                         <LinkNav name="Contact" link="/contact" />
                     </div>
-                    <div className='md:hidden border rounded-xl p-1 active:bg-white active:shadow-lg'>
-                        <HiOutlineMenuAlt1 className='w-8 h-8 text-white active:text-[#667AE1]'/>
+                    <div className='md:hidden border rounded-md  '>
+                        <Menu
+                        transition="pop"
+                        shadow="md"
+                        width={200}>
+                        <Menu.Target>
+                            <Button className='bg- text-primary-500 p-1'>
+                                <HiOutlineMenuAlt1 className='w-8 h-8 text-white active:text-[#667AE1]'/>
+                            </Button>
+                        </Menu.Target>
+                        <Menu.Dropdown
+                        className='pr-10'
+                        >
+                            {/* <Menu.Label>Pages</Menu.Label> */}
+                            <Menu.Item
+                                className='active:bg-gray-300'
+                                component={Link}
+                                to='/'
+                                >Home</Menu.Item>
+                            <Menu.Item
+                                className='active:bg-gray-300'
+                                component={Link}
+                                to='/blog'
+                                >Blog</Menu.Item>
+                            <Menu.Item
+                                className='active:bg-gray-300'
+                                component={Link}
+                                to='/project'
+                                >Projects</Menu.Item>
+                            
+                        </Menu.Dropdown>
+                        </Menu>
                     </div>
 
                 </div>
