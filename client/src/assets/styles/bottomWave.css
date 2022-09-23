@@ -1,0 +1,19 @@
+.bottomWave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.bottomWave svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 123px;
+}
+
+.bottomWave .shape-fill {
+    fill: #667AE1;
+}
